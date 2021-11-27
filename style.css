@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --DesaturatedRed: hsl(0, 36%, 70%);
+  --SoftRed: hsl(0, 93%, 68%);
+
+  --DarkGrayishRed: hsl(0, 6%, 24%);
+
+  --light: hsl(0, 0%, 100%);
+  --whitePink: hsl(0, 100%, 98%);
+  --softPink: hsl(0, 80%, 86%);
+  --darkPink: hsl(0, 74%, 74%);
+
+  --error: hsl(0, 100%, 50%);
+}
+/* Frontend guys styling */
+.attribution {
+  font-size: 0.75rem;
+  text-align: center;
+}
+.attribution a {
+  color: var(--SoftRed);
+}
+
+/* My styling */
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: "Josefin Sans", sans-serif;
+
+  background: linear-gradient(135deg, var(--light), var(--whitePink));
+}
+img {
+  display: block;
+}
+
+.container {
+  padding: 0 1.875em;
+}
+.hide {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+main {
+  padding-top: 1.875rem;
+
+  display: grid;
+  grid-template-columns: minmax(13.75rem, 28rem);
+}
+.logo {
+  margin-bottom: 2rem;
+}
+
+.logo img {
+  width: 7em;
+}
+
+.hero {
+  width: 100%;
+  height: 15.625rem;
+
+  background: url(images/hero-mobile.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.content {
+  margin-top: 4rem;
+}
+.content p {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.content p:nth-of-type(1) {
+  font-size: clamp(1.875rem, 10.4vw, 4.25rem);
+  font-weight: 300;
+  letter-spacing: 0.188rem;
+  text-transform: uppercase;
+
+  color: var(--DesaturatedRed);
+}
+
+.content p:nth-of-type(1) span {
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: var(--DarkGrayishRed);
+}
+
+.content p:nth-of-type(2) {
+  font-size: 0.95rem;
+
+  line-height: 1.5rem;
+  color: var(--DesaturatedRed);
+}
+
+form {
+  max-width: 27.5rem;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+input {
+  position: relative;
+  background: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="text"] {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--DesaturatedRed);
+  border-radius: 50px;
+  padding: 0.9rem;
+  padding-right: 6rem;
+
+  opacity: 0.5;
+  color: var(--DesaturatedRed);
+}
+
+input[type="text"]::placeholder {
+  color: var(--DesaturatedRed);
+}
+
+.form-icon-image-wrap {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  right: 0;
+}
+
+.error-icon {
+  transition: opacity 0.3s ease-in-out;
+}
+input[type="image"] {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--softPink), var(--darkPink));
+
+  border-radius: 1.8em;
+
+  box-shadow: 0 10px 25px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+input[type="image"]:active {
+  transform: scale(0.95) translateX(2px);
+  transition: transform 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.message {
+  /* position: absolute; */
+  margin-left: 0.8rem;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+
+  color: var(--error);
+}
+
+@media (min-width: 28em) {
+  body {
+    background: url(images/bg-pattern-desktop.svg) no-repeat;
+    background-size: cover;
+  }
+
+  main {
+    padding: 0;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 200px 1fr;
+  }
+
+  .hero {
+    height: 100vh;
+
+    grid-area: 1/ 2/ 3/ 3;
+    background: url(images/hero-desktop.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .logo {
+    padding-top: 3.75rem;
+  }
+  .logo img {
+    margin: 0;
+    width: 10em;
+  }
+
+  .content {
+    margin: 0;
+    padding-top: 5rem;
+  }
+
+  .content p:not(:last-of-type) {
+    text-align: left;
+    margin-bottom: 2.38rem;
+  }
+
+  .content p:nth-of-type(1),
+  .content p:nth-of-type(1) span {
+    letter-spacing: 1.25rem;
+    line-height: 4.5rem;
+  }
+
+  .content p:nth-of-type(1) span {
+    font-weight: 600;
+  }
+
+  .content p:nth-of-type(2) {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 2rem;
+  }
+
+  input[type="text"] {
+    font-weight: 600;
+    font-size: 1rem;
+
+    padding: 1.3rem;
+    padding-right: 9rem;
+  }
+  input[type="text"]::placeholder {
+    font-size: 1rem;
+    opacity: 0.5;
+  }
+  input[type="image"] {
+    padding: 1.3rem 3rem;
+    border-radius: 50px;
+  }
+}
+
+@media (min-width: 68em) {
+  .container {
+    padding-left: 10rem;
+    padding-right: 13.75rem;
+    margin: 0;
+  }
+
+  .content p {
+    max-width: 28.75rem;
+  }
+}
